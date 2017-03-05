@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="courses">
+        <item>@string/al</item>
+        <item>@string/calc</item>
+        <item>@string/inc</item>
+        <item>@string/fi</item>
+        <item>@string/prog</item>
+        <item>@string/stat</item>
+        <item>@string/wav</item>
+        <item>@string/fcr</item>
+        <item>@string/aut</item>
+        <item>@string/met</item>
+    </string-array>
+    
+    <string-array name="teachers">
+        <item>Jesús Suárez</item>
+        <item>María Cristina Suárez</item>
+        <item>Enrique Loredo</item>
+        <item>Pablo Javier Tuya</item>
+        <item>Juan José del Coz</item>
+        <item>José Manuel González</item>
+        <item>Francisco Javier Carrizo</item>
+        <item>Rubén Usamentiaga</item>
+        <item>María del Camino Rodríguez</item>
+        <item>José Ramiro Varela</item>
+    </string-array>
+
+    <string-array name="descripcion">
+        <item> @string/desc_al</item>
+        <item> @string/desc_cal</item>
+        <item> @string/desc_inc</item>
+        <item> @string/desc_fi</item>
+        <item> @string/desc_prog</item>
+        <item> @string/desc_stat</item>
+        <item> @string/desc_wav</item>
+        <item> @string/desc_fcr</item>
+        <item> @string/desc_aut</item>
+        <item> @string/desc_met</item>
+
+
+    </string-array>
+
+    <string name="desc_al">Descripcion algoritmia</string>
+    <string name="desc_cal">Descripcion calculo</string>
+    <string name="desc_inc">Descripcion inc</string>
+    <string name="desc_fi">Descripcion fi</string>
+    <string name="desc_prog">Descripcion programacion</string>
+    <string name="desc_stat">Descripcion Stat</string>
+    <string name="desc_wav">Descripcion WAV</string>
+    <string name="desc_fcr">Descripcion de fcr</string>
+    <string name="desc_aut">Descripcion de automatas</string>
+    <string name="desc_met">Descripcion de metodoliogia</string>
+</resources>
