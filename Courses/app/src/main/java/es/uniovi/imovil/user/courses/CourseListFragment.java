@@ -1,6 +1,7 @@
 package es.uniovi.imovil.user.courses;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,6 +11,16 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +31,9 @@ public class CourseListFragment extends Fragment implements
     private int mCourseCount = 0;
     Callbacks mCallback;
     private ArrayList<Course> listacursos;
-    public static final String BUND = "es.uniovi.";
+    public static final String LISTACURSOS = "ListaBundle";
+    public static final String CONTADORCURSO = "ContadorCursos";
+    public static final String COURSE_LIST_FILENAME ="FILENAME";
 
     public interface Callbacks {
         public void onCourseSelected(Course course);
@@ -57,10 +70,24 @@ public class CourseListFragment extends Fragment implements
 
         // Inicializar el layout
         ListView lvItems = (ListView) rootView.findViewById(R.id.list_view_courses);
-        String [] courses = getResources().getStringArray(R.array.courses);
-        String [] teachers = getResources().getStringArray(R.array.teachers);
-        String [] descripciones = getResources().getStringArray(R.array.descripcion);
-        listacursos = createCourseList(courses,teachers,descripciones);
+
+        if (savedInstanceState != null) {
+
+            // Obtener la lista del bundle con getParcelableArrayList()
+            listacursos =  savedInstanceState.getParcelableArrayList(LISTACURSOS);
+            mCourseCount = savedInstanceState.getInt(CONTADORCURSO);
+        } else {
+
+                // Lista por defecto
+                String [] courses = getResources().getStringArray(R.array.courses);
+                String [] teachers = getResources().getStringArray(R.array.teachers);
+                String [] descripciones = getResources().getStringArray(R.array.descripcion);
+                listacursos = createCourseList(courses,teachers,descripciones);
+
+
+        }
+
+
         mAdapter = new CourseAdapter(this.getActivity(),listacursos);
         lvItems.setAdapter(mAdapter);
         ListView lv = (ListView)rootView.findViewById(R.id.list_view_courses);
@@ -71,7 +98,8 @@ public class CourseListFragment extends Fragment implements
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        outState.putParcelable();
+        outState.putParcelableArrayList(LISTACURSOS,listacursos);
+        outState.putInt(CONTADORCURSO,mCourseCount);
     }
 
     private ArrayList<Course> createCourseList(String[] names, String[] teachers,
@@ -111,6 +139,8 @@ public class CourseListFragment extends Fragment implements
       //  startActivity(intent);
         mCallback.onCourseSelected(course);
     }
+
+
 
 
 

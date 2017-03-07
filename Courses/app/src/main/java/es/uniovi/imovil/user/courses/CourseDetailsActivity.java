@@ -16,7 +16,7 @@ public class CourseDetailsActivity extends ActionBarActivity {
 
 
 
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent intent = getIntent();
         String description = intent.getStringExtra(DESCRIPTION);
         Log.i("Main",description);
