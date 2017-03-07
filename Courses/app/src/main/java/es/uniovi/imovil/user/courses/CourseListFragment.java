@@ -27,13 +27,14 @@ import java.util.List;
 public class CourseListFragment extends Fragment implements
         AdapterView.OnItemClickListener {
 
+    private static final String COURSE_LIST_FILENAME = "FicheroCursos";
     private CourseAdapter mAdapter = null;
     private int mCourseCount = 0;
     Callbacks mCallback;
     private ArrayList<Course> listacursos;
     public static final String LISTACURSOS = "ListaBundle";
     public static final String CONTADORCURSO = "ContadorCursos";
-    public static final String COURSE_LIST_FILENAME ="FILENAME";
+
 
     public interface Callbacks {
         public void onCourseSelected(Course course);
@@ -77,14 +78,14 @@ public class CourseListFragment extends Fragment implements
             listacursos =  savedInstanceState.getParcelableArrayList(LISTACURSOS);
             mCourseCount = savedInstanceState.getInt(CONTADORCURSO);
         } else {
-
+            if (!restoreList()) {
                 // Lista por defecto
-                String [] courses = getResources().getStringArray(R.array.courses);
-                String [] teachers = getResources().getStringArray(R.array.teachers);
-                String [] descripciones = getResources().getStringArray(R.array.descripcion);
-                listacursos = createCourseList(courses,teachers,descripciones);
+                String[] courses = getResources().getStringArray(R.array.courses);
+                String[] teachers = getResources().getStringArray(R.array.teachers);
+                String[] descripciones = getResources().getStringArray(R.array.descripcion);
+                listacursos = createCourseList(courses, teachers, descripciones);
 
-
+            }
         }
 
 
@@ -140,6 +141,53 @@ public class CourseListFragment extends Fragment implements
         mCallback.onCourseSelected(course);
     }
 
+    private void saveList () {
+        FileOutputStream file = null;
+        OutputStream buffer = null;
+        ObjectOutput output = null;
+
+        try {
+            file = getActivity().openFileOutput(COURSE_LIST_FILENAME, Context.MODE_PRIVATE);
+            buffer = new BufferedOutputStream(file);
+            output = new ObjectOutputStream(buffer);
+            output.writeObject(listacursos);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                output.close();
+            } catch (IOException e) {
+            }
+        }
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        saveList();
+    }
+    private boolean restoreList () {
+        InputStream buffer = null;
+        ObjectInput input = null;
+
+        try {
+            buffer = new BufferedInputStream(
+                    getActivity().openFileInput(COURSE_LIST_FILENAME));
+
+            input = new ObjectInputStream(buffer);
+            listacursos = (ArrayList<Course>)input.readObject();
+            return true;
+        } catch (Exception ex) {
+
+        } finally {
+            try {
+                input.close();
+            } catch (Exception e) {
+
+            }
+        }
+
+        return false;
+    }
 
 
 
