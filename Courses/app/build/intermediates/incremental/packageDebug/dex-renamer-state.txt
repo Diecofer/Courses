@@ -1,7 +1,7 @@
-#Tue Mar 07 22:03:21 CET 2017
-base.0=C\:\\Users\\Diecofer\\Desktop\\Courses\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_04f6c5d6ce9e8137e3d63c7e0192cf6f6f459cb3
+#Wed Mar 08 16:24:55 CET 2017
+base.0=C\:\\Users\\Diecofer\\Desktop\\Courses\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_52083cc769f1789350da3e86117079b8b9aeff8b
 renamed.1=classes2.dex
 renamed.0=classes.dex
-file.1=C\:\\Users\\Diecofer\\Desktop\\Courses\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_52083cc769f1789350da3e86117079b8b9aeff8b\\classes.dex
-base.1=C\:\\Users\\Diecofer\\Desktop\\Courses\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_52083cc769f1789350da3e86117079b8b9aeff8b
-file.0=C\:\\Users\\Diecofer\\Desktop\\Courses\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_04f6c5d6ce9e8137e3d63c7e0192cf6f6f459cb3\\classes.dex
+file.1=C\:\\Users\\Diecofer\\Desktop\\Courses\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_04f6c5d6ce9e8137e3d63c7e0192cf6f6f459cb3\\classes.dex
+base.1=C\:\\Users\\Diecofer\\Desktop\\Courses\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_04f6c5d6ce9e8137e3d63c7e0192cf6f6f459cb3
+file.0=C\:\\Users\\Diecofer\\Desktop\\Courses\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_52083cc769f1789350da3e86117079b8b9aeff8b\\classes.dex

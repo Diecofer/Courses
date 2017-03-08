@@ -3,6 +3,7 @@ package es.uniovi.imovil.user.courses;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -28,6 +29,7 @@ public class CourseListFragment extends Fragment implements
         AdapterView.OnItemClickListener {
 
     private static final String COURSE_LIST_FILENAME = "FicheroCursos";
+    private static final Object PREFERENCES = "Preferences";
     private CourseAdapter mAdapter = null;
     private int mCourseCount = 0;
     Callbacks mCallback;
@@ -164,6 +166,7 @@ public class CourseListFragment extends Fragment implements
     public void onPause() {
         super.onPause();
         saveList();
+
     }
     private boolean restoreList () {
         InputStream buffer = null;

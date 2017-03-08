@@ -17,8 +17,8 @@ ADDED from C:\Users\Diecofer\Desktop\Courses\app\src\main\AndroidManifest.xml:2:
 		ADDED from C:\Users\Diecofer\Desktop\Courses\app\src\main\AndroidManifest.xml:2:11-69
 uses-sdk
 ADDED from C:\Users\Diecofer\Desktop\Courses\app\src\main\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:appcompat-v7:21.0.3] C:\Users\Diecofer\Desktop\Courses\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\AndroidManifest.xml:15:5-42
-MERGED from [com.android.support:support-v4:21.0.3] C:\Users\Diecofer\Desktop\Courses\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\AndroidManifest.xml:15:5-42
+MERGED from [com.android.support:appcompat-v7:21.0.3] C:\Users\Diecofer\.android\build-cache\f0dbfa529d06c8f085e2ed394fd9a49be89a6a8e\output\AndroidManifest.xml:15:5-42
+MERGED from [com.android.support:support-v4:21.0.3] C:\Users\Diecofer\.android\build-cache\154dedf9f078eeba3d4d5e0a6ca9539dc084a7cb\output\AndroidManifest.xml:15:5-42
 	android:targetSdkVersion
 		ADDED from C:\Users\Diecofer\Desktop\Courses\app\src\main\AndroidManifest.xml:9:9-38
 		INJECTED from C:\Users\Diecofer\Desktop\Courses\app\src\main\AndroidManifest.xml
@@ -29,8 +29,8 @@ MERGED from [com.android.support:support-v4:21.0.3] C:\Users\Diecofer\Desktop\Co
 		INJECTED from C:\Users\Diecofer\Desktop\Courses\app\src\main\AndroidManifest.xml
 application
 ADDED from C:\Users\Diecofer\Desktop\Courses\app\src\main\AndroidManifest.xml:12:5-28:19
-MERGED from [com.android.support:appcompat-v7:21.0.3] C:\Users\Diecofer\Desktop\Courses\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\AndroidManifest.xml:16:5-19
-MERGED from [com.android.support:support-v4:21.0.3] C:\Users\Diecofer\Desktop\Courses\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\AndroidManifest.xml:16:5-19
+MERGED from [com.android.support:appcompat-v7:21.0.3] C:\Users\Diecofer\.android\build-cache\f0dbfa529d06c8f085e2ed394fd9a49be89a6a8e\output\AndroidManifest.xml:16:5-19
+MERGED from [com.android.support:support-v4:21.0.3] C:\Users\Diecofer\.android\build-cache\154dedf9f078eeba3d4d5e0a6ca9539dc084a7cb\output\AndroidManifest.xml:16:5-19
 	android:label
 		ADDED from C:\Users\Diecofer\Desktop\Courses\app\src\main\AndroidManifest.xml:15:9-41
 	android:allowBackup

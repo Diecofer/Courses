@@ -3,7 +3,9 @@ package es.uniovi.imovil.user.courses;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
@@ -17,6 +19,7 @@ import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity implements CourseListFragment.Callbacks {
 
+	private static final String PREFERENCES = "Preferencias" ;
 	private CourseAdapter mAdapter = null;
 	private int mCourseCount = 0;
 	boolean mTwoPanes = false;
@@ -57,6 +60,14 @@ public class MainActivity extends ActionBarActivity implements CourseListFragmen
 		if (findViewById(R.id.course_details_container) != null) {
 			mTwoPanes = true;
 		}
+		if (savedInstanceState != null) {
+			savedInstanceState.getInt(CourseListFragment.CONTADORCURSO);
+		}
+		else {
+			SharedPreferences prefs = getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE);
+			mCourseCount=prefs.getInt(CourseListFragment.CONTADORCURSO, 0);
+
+		}
 		/*
 		// Configurar la lista
 		ListView lvItems = (ListView) findViewById(R.id.list_view_courses);
@@ -89,7 +100,7 @@ public class MainActivity extends ActionBarActivity implements CourseListFragmen
 						fragmentManager.findFragmentById(R.id.course_list_frag);
 
 				String name = String.format(getString(R.string.default_course_format), ++mCourseCount);
-				String teacher = String.format(getString(R.string.default_teacher_format),  mCourseCount);
+				String teacher = String.format(getString(R.string.default_teacher_format), mCourseCount);
 				String description = "";
 
 				Course course = new Course(name, teacher, description);
@@ -99,10 +110,20 @@ public class MainActivity extends ActionBarActivity implements CourseListFragmen
 				return super.onOptionsItemSelected(item);
 		}
 	}
+	public void onPause() {
+		super.onPause();
+		SharedPreferences prefs = getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE);
+		SharedPreferences.Editor prefsEditor = prefs.edit();
+		prefsEditor.putInt(CourseListFragment.CONTADORCURSO, mCourseCount);
+		prefsEditor.commit();
+	}
+}
+
+
 
 	
 
 
 
 
-}
+
